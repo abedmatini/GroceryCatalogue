@@ -1,8 +1,7 @@
-
 import 'react-native-gesture-handler';
 import React from 'react';
 import { Text, View, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
-import { styles } from '../navigation/DrawerNavigator';
+import { styles } from '../navigation/TabNavigator';
 
 export default function DairyScreen() {
     const items = [
@@ -12,13 +11,13 @@ export default function DairyScreen() {
       { name: 'Butter', price: '$2.00', image: 'https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
       { name: 'Ghee', price: '$2.00', image: 'https://cdn.pixabay.com/photo/2024/02/05/09/13/ghee-8554042_1280.jpg' },
       { name: 'Ghee', price: '$2.00', image: 'https://images.unsplash.com/photo-1559561853-08451507cbe7?q=80&w=1914&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
-  
-  
+
+
     ];
-  
+
     return (
       <ScrollView contentContainerStyle={styles.container}>
-          <Text style={styles.title}>Fresh dairy products for you from folders</Text>
+        <Text style={styles.title}>Fresh dairy products for you from folders</Text>
         {items.map((item, index) => (
           <View key={index} style={styles.itemContainer}>
             <Image source={{uri:item.image}} style={styles.image} />
@@ -33,8 +32,6 @@ export default function DairyScreen() {
 
           </View>
         ))}
-       
       </ScrollView>
     );
   }
- 

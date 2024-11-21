@@ -1,21 +1,57 @@
-import React from 'react'
-import { Text,StyleSheet} from 'react-native';
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import FruitsScreen from '../screens/FruitsScreen';
+import VegetablesScreen from '../screens/VegetablesScreen';
+import DairyScreen from '../screens/DairyScreen';
+import BakeryItemsScreen from '../screens/BakeryItemsScreen';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaView, StyleSheet, Text } from 'react-native';
 
-function TabNavigator() {
+const Tab = createBottomTabNavigator();
+
+ function TabNavigator() {
   return (
     <SafeAreaProvider>
-      <Text>Tab Navigator</Text>
-      <Text>Ttab Navigatorr</Text>
-
-      <Text>Ttab Navigatorr</Text>
+      <NavigationContainer>
+        <SafeAreaView style={styles.safeArea}>
+          <Text style={styles.brandName}>FreshMart</Text>
+          <Tab.Navigator>
+            <Tab.Screen
+              name="Fruits"
+              component={FruitsScreen}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Tab.Screen
+              name="Vegetables"
+              component={VegetablesScreen}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Tab.Screen
+              name="Dairy"
+              component={DairyScreen}
+              options={{
+                headerShown: false,
+              }}
+            />
+              <Tab.Screen
+              name="Bakeries"
+              component={BakeryItemsScreen}
+              options={{
+                headerShown: false,
+              }}
+            />
+          </Tab.Navigator>
+        </SafeAreaView>
+      </NavigationContainer>
     </SafeAreaProvider>
-    
-  )
+  );
 }
-
 export default TabNavigator
-
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 10 },
   title: { fontSize: 27, marginBottom: 10, textAlign:'center',color: 'black', fontStyle:'italic'},

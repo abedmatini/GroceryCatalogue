@@ -1,8 +1,7 @@
-
 import 'react-native-gesture-handler';
 import React from 'react';
 import { Text, View, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
-import { styles } from '../navigation/DrawerNavigator';
+import { styles } from '../navigation/TabNavigator';
 
 export default function FruitsScreen() {
     const fruits = [
@@ -13,7 +12,7 @@ export default function FruitsScreen() {
       { name: 'Orange', price: '$1.00', image: 'https://images.unsplash.com/photo-1703476906067-b33358c61837?q=80&w=1887&auto=format&fit=crop' },
       { name: 'Strawberry', price: '$2.50', image: 'https://images.unsplash.com/photo-1495570689269-d883b1224443?q=80&w=1931&auto=format&fit=crop' },
     ];
-  
+
     return (
       <ScrollView style={styles.container}>
         <Text style={styles.title}>Handpicked, extra juicy fruits </Text>
@@ -34,5 +33,3 @@ export default function FruitsScreen() {
       </ScrollView>
     );
   }
-  
-  
