@@ -6,6 +6,7 @@ function TabNavigator() {
   return (
     <SafeAreaProvider>
       <Text>Tab Navigator</Text>
+      <Text>Tab Navigator</Text>
     </SafeAreaProvider>
     
   )
